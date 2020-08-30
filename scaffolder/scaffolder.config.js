@@ -24,7 +24,8 @@ module.exports = {
 					const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
 					spawnSync( npm, ['install'], {
-						cwd: modulePath
+						cwd: modulePath,
+						stdio: "inherit"
 			   })
 				}
 			}
