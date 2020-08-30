@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+const { spawnSync } = require('child_process');
 
 module.exports = {
 	functions: {
@@ -22,7 +22,9 @@ module.exports = {
 			hooks: {
 				postTemplateGeneration: (ctx) => {
 					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
-					execSync(`cd ${modulePath} && git init && npm install --prefix ${modulePath}`, {stdio: 'inherit'})
+					spawnSync( npm, ['install'], {
+						cwd: modulePath
+			   })
 				}
 			}
 		}
