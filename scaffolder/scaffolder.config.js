@@ -1,4 +1,4 @@
-const execSync = require('child_process');
+const { execSync } = require('child_process');
 
 module.exports = {
 	functions: {
@@ -21,7 +21,6 @@ module.exports = {
 		"typescript-module": {
 			hooks: {
 				postTemplateGeneration: (ctx) => {
-					console.log(ctx)
 					execSync(`cd ${ctx.targetRoot} && git init && npm i`, {stdio: 'inherit'})
 				}
 			}
