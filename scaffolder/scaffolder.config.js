@@ -20,8 +20,8 @@ module.exports = {
 	templateOptions: {
 		"typescript-module": {
 			hooks: {
-				preTemplateGeneration: (ctx) => {
-					execSync(`cd ${ctx.targetRoot} && git init && npm i`)
+				postTemplateGeneration: (ctx) => {
+					execSync(`cd ${ctx.targetRoot} && git init && npm i`, {stdio: 'inherit'})
 				}
 			}
 		}
