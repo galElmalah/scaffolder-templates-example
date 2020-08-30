@@ -17,7 +17,7 @@ module.exports = {
 			question: 'Whats your name?',
 		}	
 	},
-	templateOptions: {
+	templatesOptions: {
 		"typescript-module": {
 			hooks: {
 				postTemplateGeneration: (ctx) => {
