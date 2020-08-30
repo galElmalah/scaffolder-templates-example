@@ -23,10 +23,10 @@ module.exports = {
 				postTemplateGeneration: (ctx) => {
 					const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
-					setTimeout(() => spawnSync( npm, ['install'], {
+				spawnSync( npm, ['install'], {
 						cwd: modulePath,
 						stdio: "inherit"
-			   }), 200)
+			   });
 				}
 			}
 		}
