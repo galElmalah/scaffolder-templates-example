@@ -1,4 +1,4 @@
-const { spawnSync } = require('child_process');
+const { spawnSync, execSync } = require('child_process');
 
 module.exports = {
 	functions: {
@@ -24,6 +24,8 @@ module.exports = {
 					const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
 					console.log(modulePath)
+					execSync(`cd ${modulePath} && git init && npm install`,{ stdio: "inherit"
+				})
 				spawnSync( npm, ['install'], {
 						cwd: modulePath,
 						stdio: "inherit"
