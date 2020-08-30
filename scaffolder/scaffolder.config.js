@@ -21,7 +21,9 @@ module.exports = {
 		"typescript-module": {
 			hooks: {
 				postTemplateGeneration: (ctx) => {
-					execSync(`cd ${ctx.targetRoot}/${ctx.parametersValues.moduleName} && git init && npm cache clean && npm install`, {stdio: 'inherit'})
+					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
+					execSync(`cd ${modulePath} && git init && npm start --prefix ${modulePath}
+					&& npm install`, {stdio: 'inherit'})
 				}
 			}
 		}
