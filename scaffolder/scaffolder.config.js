@@ -26,10 +26,10 @@ module.exports = {
 					console.log(modulePath)
 					execSync(`cd ${modulePath} && ls -a && git init && npm install`,{ stdio: "inherit"
 				})
-				spawnSync( npm, ['install'], {
-						cwd: modulePath,
-						stdio: "inherit"
-			   });
+				// spawnSync( npm, ['install'], {
+				// 		cwd: modulePath,
+				// 		stdio: "inherit"
+			  //  });
 				}
 			}
 		}
