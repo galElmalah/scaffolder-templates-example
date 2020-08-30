@@ -22,8 +22,7 @@ module.exports = {
 			hooks: {
 				postTemplateGeneration: (ctx) => {
 					const modulePath = `${ctx.targetRoot}/${ctx.parametersValues.moduleName}`
-					execSync(`cd ${modulePath} && git init && npm start --prefix ${modulePath}
-					&& npm install`, {stdio: 'inherit'})
+					execSync(`cd ${modulePath} && git init && npm install --prefix ${modulePath}`, {stdio: 'inherit'})
 				}
 			}
 		}
