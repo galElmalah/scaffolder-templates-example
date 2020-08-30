@@ -26,7 +26,7 @@ module.exports = {
 					setTimeout(() => spawnSync( npm, ['install'], {
 						cwd: modulePath,
 						stdio: "inherit"
-			   }),2000)
+			   }), 200)
 				}
 			}
 		}
